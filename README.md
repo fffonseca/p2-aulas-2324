@@ -1,2 +1,2 @@
-# p2-aulas-2324
-Exemplo prático criado ao longo do semestre na UC de Programação II do 1º Ciclo de Estudos em Multimédia do ISMT.
+# Projeto das aulas de Programação II
+Exemplo prático desenvolvido ao longo do semestre na UC de Programação II do 1º ciclo de estudos em Multimédia do ISMT. O presente trabalho tira partido da framework NodeJS, Express, EJS e base de dados MySQL.
