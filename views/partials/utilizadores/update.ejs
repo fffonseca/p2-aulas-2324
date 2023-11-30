@@ -1,0 +1,56 @@
+<form class="container" method="post" action="http://localhost:5000/utilizadores/update">
+  <div class="row">
+    <input type="hidden" id="id" name="id" value="<%= utilizador.id %>" />
+    <div class="mb-3">
+      <label for="nome" class="col-sm-2 col-form-label">Nome:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="nome" name="nome" value="<%= utilizador.nome %>" required>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="dta_registo" class="col-sm-2 col-form-label">Data de registo:</label>
+      <div class="col-sm-10">
+        <input type="date" id="dta_registo" name="dta_registo" />
+        <!------------------- BEGIN --------------------->
+        <!-- Formata a data de acordo com o input 'date' -->
+        <script>
+          let data1 = "<%- utilizador.dta_registo.toDateString() %>";
+          let datax1 = new Date(data1);
+          let dataf1 =
+            datax1.getFullYear() +
+            "-" +
+            ("0" + (datax1.getMonth() + 1)).slice(-2) +
+            "-" +
+            ("0" + datax1.getDate()).slice(-2);
+          document.getElementById("dta_registo").value = dataf1;
+        </script>
+        <!-------------------- END ---------------------->
+      </div>
+      <div class="mb-3">
+        <label for="dta_atualizacao" class="col-sm-2 col-form-label">Data de registo:</label>
+        <div class="col-sm-10">
+          <input type="date" id="dta_atualizacao" name="dta_atualizacao" />
+          <!------------------- BEGIN --------------------->
+          <!-- Formata a data de acordo com o input 'date' -->
+          <script>
+            let data2 = "<%- utilizador.dta_atualizacao.toDateString() %>";
+            let datax2 = new Date(data2);
+            let dataf2 =
+              datax2.getFullYear() +
+              "-" +
+              ("0" + (datax2.getMonth() + 1)).slice(-2) +
+              "-" +
+              ("0" + datax2.getDate()).slice(-2);
+            document.getElementById("dta_atualizacao").value = dataf2;
+          </script>
+          <!-------------------- END ---------------------->
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="col-sm-6">
+          <button type="submit" class="btn btn-primary">Atualizar</button>&nbsp;
+          <button type="reset" class="btn btn-secondary">Limpar</button>
+        </div>
+      </div>
+    </div>
+</form>

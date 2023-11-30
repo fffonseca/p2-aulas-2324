@@ -1,0 +1,41 @@
+<div class="container mt-4">
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Data Registo</th>
+          <th scope="col">Data Atualização</th>
+          <th scope="col" class="text-center">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% utilizadores.forEach((utilizador)=> { %>
+          <tr>
+            <th scope="row">
+              <%= utilizador.id %>
+            </th>
+            <td>
+              <%= utilizador.nome %>
+            </td>
+            <td>
+              <%= utilizador.dta_registo.toLocaleString() %>
+            </td>
+            <td>
+              <%= utilizador.dta_atualizacao.toLocaleString() %>
+            </td>
+            <td class="text-center">
+              <a class="edit" title="" data-toggle="tooltip" data-original-title="Editar"
+                href="http://localhost:5000/utilizadores/<%- utilizador.id %>"><i class="fas fa-pencil-alt" style="color: black"></i></a>&nbsp;&nbsp;
+              <a class="delete" title="" data-toggle="tooltip" data-original-title="Apagar"
+                href="http://localhost:5000/utilizadores/delete/<%- utilizador.id %>"><i class="fas fa-trash-alt"
+                  style="color: black"></i></a>
+            </td>
+          </tr>
+          <% }); %>
+      </tbody>
+    </table>
+  </div>
+</div>

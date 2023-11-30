@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício das Aulas (P2) - ISMT</title>
+  <link rel="stylesheet" href="http://localhost:5000/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://localhost:5000/">Exercício da Aula (Programação II)</a>
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="http://localhost:5000">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="http://localhost:5000/utilizadores">Lista Utilizadores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="http://localhost:5000/utilizadores/create">Criar Utilizador</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <% if (typeof op !="undefined" && op==1) { %>
+      <%- include('../partials/utilizadores/index', { utilizadores: dados }); -%>
+    <% } else if (typeof op !="undefined" && op==2) { %>
+      <%- include('../partials/utilizadores/create'); -%>
+    <% } else if (typeof op !="undefined" && op==3) { %>
+      <%- include('../partials/utilizadores/update', { utilizador: dados }); -%>
+    <% } %>
+  </main>
+
+  <footer class="text-center p-4 fixed-bottom" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2022 <a class="text-reset fw-bold" href="http://multimedia.ismt.pt" target="_blank">Multimédia ISMT</a>
+  </footer>
+
+  <script src="http://localhost:5000/js/jquery.slim.min.js"></script>
+  <script src="http://localhost:5000/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
