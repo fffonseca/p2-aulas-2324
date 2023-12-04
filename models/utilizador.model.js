@@ -52,22 +52,31 @@ Utilizador.getAll = (result) => {
 };
 
 Utilizador.updateById = (id, utilizador, result) => {
-  conexao.query('UPDATE utilizador SET nome=?, dta_registo=?, dta_atualizacao=? WHERE id=?',
-      [utilizador.nome, utilizador.password, utilizador.dta_registo, utilizador.dta_atualizacao, utilizador.id], (error, res) => {
-          if (error) {
-              console.log("Ocorreu um erro ", error);
-              result(error, null);
-              return;
-          }
+  conexao.query(
+    "UPDATE utilizador SET nome=?, password=?, dta_registo=?, dta_atualizacao=? WHERE id=?",
+    [
+      utilizador.nome,
+      utilizador.password,
+      utilizador.dta_registo,
+      utilizador.dta_atualizacao,
+      utilizador.id,
+    ],
+    (error, res) => {
+      if (error) {
+        console.log("Ocorreu um erro ", error);
+        result(error, null);
+        return;
+      }
 
-          if (res.affectedRows == 0) {
-              result({ result: "não encontrado"}, null);
-              return;
-          }
+      if (res.affectedRows == 0) {
+        result({ result: "não encontrado" }, null);
+        return;
+      }
 
-          console.log("Utilizador atualizado: ", {id: id, ...utilizador});
-          result(null, {id: id, ...utilizador});
-      });
+      console.log("Utilizador atualizado: ", { id: id, ...utilizador });
+      result(null, { id: id, ...utilizador });
+    }
+  );
 };
 
 Utilizador.remove = (id, result) => {

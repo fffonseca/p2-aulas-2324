@@ -24,10 +24,13 @@
             <a class="nav-link active" aria-current="page" href="http://localhost:5000">Início</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="http://localhost:5000/utilizadores">Lista Utilizadores</a>
+            <a class="nav-link active" href="http://localhost:5000/utilizadores">Listar Utilizadores</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="http://localhost:5000/utilizadores/create">Criar Utilizador</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="http://localhost:5000/login">Login</a>
           </li>
         </ul>
       </div>
@@ -41,11 +44,13 @@
       <%- include('../partials/utilizadores/create'); -%>
     <% } else if (typeof op !="undefined" && op==3) { %>
       <%- include('../partials/utilizadores/update', { utilizador: dados }); -%>
+    <% } else if (typeof op !="undefined" && op==4) { %>
+      <%- include('../partials/auth/index'); -%>
     <% } %>
   </main>
 
   <footer class="text-center p-4 fixed-bottom" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2022 <a class="text-reset fw-bold" href="http://multimedia.ismt.pt" target="_blank">Multimédia ISMT</a>
+    © 2023 <a class="text-reset fw-bold" href="http://multimedia.ismt.pt" target="_blank">Multimédia ISMT</a>
   </footer>
 
   <script src="http://localhost:5000/js/jquery.slim.min.js"></script>

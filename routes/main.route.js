@@ -27,4 +27,8 @@ router.post("/form1", function(req, res) {
     res.send("ID: "+ req.body.id + " // NOME: "+ req.body.nome);
 });
 
+router.get("/login", function (req, res) {
+  res.render("pages/index", { op: 4 });
+});
+
 module.exports = router; //MUITO IMPORTANTE!!

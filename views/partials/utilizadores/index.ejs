@@ -4,7 +4,8 @@
       <thead class="thead-light">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Nome</th>
+          <th scope="col">Username</th>
+          <th scope="col">Password</th>
           <th scope="col">Data Registo</th>
           <th scope="col">Data Atualização</th>
           <th scope="col" class="text-center">Ações</th>
@@ -14,11 +15,14 @@
 
         <% utilizadores.forEach((utilizador)=> { %>
           <tr>
-            <th scope="row">
+            <td scope="row">
               <%= utilizador.id %>
-            </th>
+            </td>
             <td>
               <%= utilizador.nome %>
+            </td>
+            <td>
+              <%= utilizador.password %>
             </td>
             <td>
               <%= utilizador.dta_registo.toLocaleString() %>

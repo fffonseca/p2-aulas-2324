@@ -13,6 +13,7 @@ exports.create = (req, res) => {
    * Define um objeto 'Utilizador' com os dados recebidos                  *
    *******************************************************************/
   const utilizador = new Utilizador({
+    //id: req.body.id,
     nome: req.body.nome,
     password: req.body.password,
     dta_registo: req.body.dta_registo,
